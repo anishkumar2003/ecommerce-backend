@@ -1,12 +1,15 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
+const dotenv = require('dotenv');
+const connectDB = require('./Config/db');
+const app = require('./app');
 
-app.get('/', (req, res) => {
-    console.log("Request received on /");
-    res.send("Hello World");
-});
+// Load environment variables
+dotenv.config();
 
+// Connect to MongoDB
+connectDB();
+
+// Start the server
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
