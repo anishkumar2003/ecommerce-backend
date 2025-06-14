@@ -27,8 +27,3 @@ A backend API for managing products, categories, customers, and orders for an e-
 ---
 
 ## 🚀 Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/ecommerce-admin-backend.git
-cd ecommerce-admin-backend
