@@ -33,4 +33,8 @@ app.use('/api/orders', orderRoutes);
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
 
+app.use((req, res) => {
+  res.status(404).json({ message: 'Route not found' });
+})
+
 module.exports = app;

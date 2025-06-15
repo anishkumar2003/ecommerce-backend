@@ -8,9 +8,17 @@ const productController = require('../controllers/productController');
 // @desc    Get all products
 router.get('/', productController.getAllProducts);
 
+// @route   GET /api/products/search?q=keyword
+// @desc    Search products by name (partial match)
+router.get('/search', productController.searchProductsByName);
+
 // @route   POST /api/products
 // @desc    Create a new product
 router.post('/', productController.createProduct);
+
+// @route   POST /api/products/bulk
+// @desc    Add products in bulk
+router.post('/bulk', productController.bulkCreateProducts);
 
 // @route   GET /api/products/:id
 // @desc    Get a product by ID
