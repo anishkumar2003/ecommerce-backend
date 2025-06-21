@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
+
 // Middleware
 app.use(express.json()); // Parses incoming JSON requests
 
@@ -32,6 +36,8 @@ app.use('/api/orders', orderRoutes);
 // User Routes
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });

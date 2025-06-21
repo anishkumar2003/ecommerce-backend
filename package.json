@@ -9,12 +9,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "swagger":"node swagger.js"
   },
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.15.2",
+    "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
